@@ -507,6 +507,13 @@
   let targetChatId = null;
   let chatName = null;
 
+  // Читаем chat_id из URL параметра
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get('chat_id')) {
+    targetChatId = urlParams.get('chat_id');
+    document.getElementById('chatName').textContent = 'ID ' + targetChatId;
+}
+  
   if (tg?.initDataUnsafe?.start_param) {
     const param = tg.initDataUnsafe.start_param;
     if (param.startsWith('bizChat')) {
