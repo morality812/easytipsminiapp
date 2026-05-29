@@ -509,7 +509,7 @@
   let adminId = urlParams.get('admin_id') || (tg?.initDataUnsafe?.user?.id) || null;
 
   // Адрес сервера бота — замените на ваш ngrok URL когда будет
-  const BOT_SERVER = urlParams.get('server') || 'http://localhost:8000';
+  const BOT_SERVER = urlParams.get('server') || 'https://lip-remix-chug.ngrok-free.dev';
 
   if (targetChatId) {
     document.getElementById('chatName').textContent = 'ID ' + targetChatId;
