@@ -627,9 +627,12 @@
       }
 
       const resp = await fetch(`${BOT_SERVER}/send`, {
-        method: 'POST',
-        body: formData
-      });
+  method: 'POST',
+  body: formData,
+  headers: {
+    'ngrok-skip-browser-warning': '1'
+  }
+});
 
       const data = await resp.json();
       if (!data.ok) throw new Error(data.error || 'Server error');
